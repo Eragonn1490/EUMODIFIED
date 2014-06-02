@@ -1,0 +1,47 @@
+country_decisions = {
+
+	formjerusalemsa = {
+	
+		major = yes
+		
+		potential = {
+			any_subject_country = {
+				is_protectorate = yes
+				is_subject_of = ROOT
+				NOT = { technology_group = western }
+				NOT = { has_country_modifier = governor_general }
+			} 
+		}
+		
+		allow = {
+			is_subject = no
+			is_at_war = no
+			adm_power = 200
+			treasury = 500
+		}
+		
+		effect = {
+			add_adm_power = -200
+			add_treasury = -500	
+			random_subject_country = {
+				limit = { 
+				is_subject_of = ROOT
+				is_protectorate = yes 
+			}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				add_treasury = 500
+				add_prestige = 25
+				add_country_modifier = {
+					name = "governor_general"
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
