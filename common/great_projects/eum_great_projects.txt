@@ -1,0 +1,9 @@
+louvre = {
+	ambient_object = French_windmill
+	province = 183
+	time = 120
+	
+	modifier = {
+		province_trade_power_value = 20
+	}
+}
