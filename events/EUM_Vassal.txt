@@ -1,0 +1,132 @@
+namespace = eum_vassal
+
+country_event = {
+	id = eum_vassal.1
+	title = "eum_vassal.EVTNAME1"
+	desc = "eum_vassal.EVTDESC1"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		is_at_war = no	
+		has_country_modifier = governor_general
+		NOT = { has_country_modifier = Integration_Successful }
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	# Successful Change in Government
+	option = {
+		name = eum_vassal.EVTOPTA1
+		ai_chance = { factor = 30 }
+		change_government = grand_duchy
+		change_technology_group = western
+		add_country_modifier = {
+      			name = "Integration_Successful"
+     			duration = -1
+    		}
+		set_ai_personality = {
+			personality = ai_militarist
+			locked = yes
+		}
+		overlord = {
+			country_event = {
+				id = eum_vassal.3
+				days = 0
+			}
+		}
+	}
+
+	# Country Unstable Governor-General Might Leave until it stabalizes
+	option = {
+		name = eum_vassal.EVTOPTA2
+		
+		ai_chance = { factor = 30 }
+		
+		random_list = {
+			10 = {
+				add_prestige = 10
+				overlord = {
+					country_event = {
+						id = eum_vassal.5
+						days = 0
+					}
+				}
+			}
+			10 = {  
+				add_prestige = -10
+				remove_country_modifier = governor_general
+				overlord = {
+					country_event = {
+						id = eum_vassal.4
+						days = 0
+					}
+				}	
+			}
+		}
+	}
+
+	# Nobles Push for Independence
+	option = {
+		name = eum_vassal.EVTOPTA3
+		ai_chance = { factor = 30 }
+		overlord = {
+			ROOT = {
+				change_government = constitutional_republic
+				remove_country_modifier = governor_general
+				add_casus_belli = {
+					target = PREV
+					type = cb_independence_war
+					months = 1825
+				}
+				declare_war_with_cb = {
+					who = PREV
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eum_vassal.3 
+	title = eum_vassal.overlordr1
+	desc  = eum_vassal.overlordr1d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_vassal.overlordr1o
+		
+  }
+}
+
+country_event = {
+	id = eum_vassal.4 
+	title = eum_vassal.overlordr2
+	desc  = eum_vassal.overlordr2d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_vassal.overlordr2o
+		
+  }
+}
+
+country_event = {
+	id = eum_vassal.5 
+	title = eum_vassal.overlordr3
+	desc  = eum_vassal.overlordr3d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_vassal.overlordr3o
+		
+  }
+}
