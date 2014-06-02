@@ -1,0 +1,36 @@
+country_decisions = {
+
+	construct_louvre = {
+		major = yes
+		potential = {
+			OR = {
+				ai = no
+				AND = {
+					treasury = 30000
+					owns = 183
+				}
+			}
+			has_discovered = 183
+			183 = {
+				range = ROOT
+				NOT = { has_great_project = louvre }
+				NOT = { has_construction = louvre}
+			}
+			adm_tech = 20
+		}
+		allow = {
+			owns = 183
+			adm_tech = 26
+			treasury = 30000
+		}
+		effect = {
+			add_treasury = -30000
+			183 = {	# Paris
+				add_great_project = louvre
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
