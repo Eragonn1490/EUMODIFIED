@@ -1,0 +1,88 @@
+namespace = eum_joinhre
+
+country_event = {
+	id = eum_joinhre.1 
+	title = eum_joinhre.emperordt
+	desc  = eum_joinhre.emperordd
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_joinhre.emperordo
+	 
+	 ai_chance = { factor = 100 }
+	 
+	 random_list = {
+			10 = {
+				add_prestige = 10
+				random_subject_country = {
+					limit = { 
+						has_country_modifier = emperor_decides
+							OR = {
+								alliance_with = emperor
+								marriage_with = emperor
+							}
+					}
+					country_event = { id = eum_joinhre.2 days = 0 }
+					add_prestige = 5
+				}
+			}
+			10 = {  
+				random_subject_country = {
+					limit = { 
+						has_country_modifier = emperor_decides
+							OR = {
+								alliance_with = emperor
+								marriage_with = emperor
+							}
+					}
+					country_event = { id = eum_joinhre.3 days = 0 }
+					add_prestige = -10
+				}	
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eum_joinhre.2 
+	title = eum_joinhre.overlordr1
+	desc  = eum_joinhre.overlordr1d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_joinhre.overlordr1o
+		
+		remove_country_modifier = emperor_decides
+		ROOT = {
+			every_owned_province = {
+				if = {
+					limit = {
+							continent = europe 
+						}
+					set_in_empire = yes
+					add_base_tax = 1
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = eum_joinhre.3 
+	title = eum_joinhre.overlordr2
+	desc  = eum_joinhre.overlordr2d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = eum_joinhre.overlordr2o
+		
+		remove_country_modifier = emperor_decides
+		remove_country_modifier = centralization_modifier
+  }
+}
