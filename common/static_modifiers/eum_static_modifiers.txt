@@ -1,0 +1,33 @@
+dynastic_prep = { 
+	local_manpower_modifier = 0.33
+	local_tax_modifier = -0.55
+	defensiveness = 0.10
+}
+cooldown_time = {
+	
+}
+hapsburgs_are_back = {
+
+}
+cooldown = {
+}
+reevaluate = {
+	
+}
+medici_bankers = {
+	inflation_reduction = 0.01
+}
+governor_general = {
+	global_revolt_risk = -1
+	prestige = 0.5
+	land_morale = 0.04
+	naval_morale = 0.04	
+}
+Integration_Successful = {
+	local_manpower_modifier = 0.10
+	local_tax_modifier = 0.10
+	defensiveness = 0.10
+}
+emperor_decides = {
+
+}
