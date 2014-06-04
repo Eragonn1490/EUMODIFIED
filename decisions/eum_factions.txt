@@ -1,0 +1,84 @@
+country_decisions = {
+
+	add_faction1 = {
+		major = yes
+		potential = {
+			mil_tech = 12
+			ai = no
+		}
+		allow = {
+			is_at_war = no
+			num_of_cities = 10
+			stability = 1
+		}
+		effect = {
+			add_prestige = 15
+			random_owned_province = {
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_faction = imperialist
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	add_faction2 = {
+		major = yes
+		potential = {
+			dip_tech = 12
+			ai = no
+		}
+		allow = {
+			is_at_war = no
+			num_of_cities = 10
+			stability = 1
+		}
+		effect = {
+			add_prestige = 15
+			random_owned_province = {
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_faction = free_religion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	add_faction3 = {
+		major = yes
+		potential = {
+			adm_tech = 12
+			ai = no
+		}
+		allow = {
+			is_at_war = no
+			num_of_cities = 10
+			stability = 1
+		}
+		effect = {
+			add_prestige = 15
+			random_owned_province = {
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_faction = regional_government
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

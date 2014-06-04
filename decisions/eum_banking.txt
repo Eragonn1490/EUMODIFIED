@@ -1,0 +1,47 @@
+country_decisions = {
+	
+#####################
+# Medici Banks
+#####################
+
+bankwith_medici = {
+	major = yes
+	
+	potential = {
+		NOT = { has_country_modifier = medici_bankers }
+	}
+
+	allow = {
+		any_ally = { 
+					owns = 116 # Tuscan Capital
+						has_opinion = { who = ROOT value = 100 }
+				}
+	}
+	
+	effect = {
+		every_owned_province = {
+		   if = {
+			limit = {
+			   is_city = yes
+			   }
+			   add_base_tax = 1
+			}
+		}
+		
+		add_country_modifier = {
+      			name = "medici_bankers"
+     			duration = -1
+		}
+		
+		every_owned_province = {
+		   if = {
+			limit = {
+			    is_city = yes
+			    has_port = yes
+			   }
+			   add_base_tax = 1
+			}
+		}
+	}	     
+}
+}

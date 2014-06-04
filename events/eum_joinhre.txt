@@ -9,40 +9,36 @@ country_event = {
 	is_triggered_only = yes
   
   option = {
-    name = eum_joinhre.emperordo
-	 
-	 ai_chance = { factor = 100 }
-	 
-	 random_list = {
-			10 = {
-				add_prestige = 10
-				random_subject_country = {
-					limit = { 
-						has_country_modifier = emperor_decides
-							OR = {
-								alliance_with = emperor
-								marriage_with = emperor
-							}
-					}
-					country_event = { id = eum_joinhre.2 days = 0 }
-					add_prestige = 5
-				}
+		 name = eum_joinhre.emperord1o
+		
+		add_prestige = 10
+		
+		any_country = {
+			limit = { 
+				has_country_modifier = emperor_decides
 			}
-			10 = {  
-				random_subject_country = {
-					limit = { 
-						has_country_modifier = emperor_decides
-							OR = {
-								alliance_with = emperor
-								marriage_with = emperor
-							}
-					}
-					country_event = { id = eum_joinhre.3 days = 0 }
-					add_prestige = -10
-				}	
+			country_event = { id = eum_joinhre.3 days = 0 }
+			add_prestige = -10
+		}	
+		
+		ai_chance = { factor = 50 }
+  }
+  
+  option = {
+		 name = eum_joinhre.emperord2o
+		 
+		 add_prestige = 10
+		
+		 any_country = {
+			limit = { 
+				has_country_modifier = emperor_decides
 			}
+			country_event = { id = eum_joinhre.2 days = 0 }
+			add_prestige = 5
 		}
-	}
+		
+		ai_chance = { factor = 50 }
+  }
 }
 
 country_event = {
@@ -82,7 +78,9 @@ country_event = {
   option = {
     name = eum_joinhre.overlordr2o
 		
-		remove_country_modifier = emperor_decides
-		remove_country_modifier = centralization_modifier
+		ROOT = {
+			remove_country_modifier = emperor_decides
+			remove_country_modifier = centralization_modifier
+		}
   }
 }
