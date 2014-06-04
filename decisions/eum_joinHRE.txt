@@ -12,6 +12,7 @@ join_hre = {
 		 capital_scope = { continent = europe }
 		 religion_group = christian
 		 is_part_of_hre = no
+		 NOT = { has_country_modifier = emperor_decides }
 	}
 	
 	allow = {
@@ -25,25 +26,28 @@ join_hre = {
 			alliance_with = emperor
 			marriage_with = emperor
 		}
-		NOT = { has_country_modifier = emperor_decides }
 	}
 
 	effect = {
-			add_prestige = 5
-			
 			add_adm_power = -80
-			
 			add_country_modifier = {
 					name = "centralization_modifier"
 					duration = 7300
-			}
-
-		    add_country_modifer = {
-					name "emperor_decides"
+				}
+			add_prestige = 5
+			add_country_modifier = {
+					name = "emperor_decides"
 					duration = -1
 			}
 			
-			emperor = { country_event = { id = eum_vassal.3 days = 0 } }
+			emperor = {
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				add_prestige = 25
+				country_event = { id = eum_joinhre.1 days = 0 }
+			}
 		}
 	}
 }
