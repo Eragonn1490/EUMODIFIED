@@ -1,0 +1,51 @@
+namespace = eum_swissmercs
+
+country_event = {
+	id = eum_swissmercs.1
+	title = "eum_swissmercs.EVTNAME88005001"
+	desc = "eum_swissmercs.EVTDESC88005001"
+	picture = LAND_MILITARY_eventPicture
+	
+	trigger = {
+		OR = {
+			any_owned_province = {
+				region = Helvetia
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					region = Helvetia
+					is_city = yes
+				}
+			}
+		}
+		NOT = { manpower_percentage = 60 }
+		num_of_cities = 5
+		is_at_war = yes		 
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "eum_swissmercs.EVTOPTA88005001"		#Send off a large force
+		add_army_tradition = 6
+		add_manpower = -10
+		add_prestige = 15
+		add_treasury = 70
+	}
+	option = {
+		name = "eum_swissmercs.EVTOPTB88005001"		#Only send those we can spare
+		add_manpower = -6
+		add_prestige = 5
+		add_treasury = 20
+	}
+	option = {
+		name = "eum_swissmercs.EVTOPTC88005001"		#We need them for our own army
+		add_army_tradition = -10
+		add_prestige = -15
+		add_manpower = 12
+	}
+}

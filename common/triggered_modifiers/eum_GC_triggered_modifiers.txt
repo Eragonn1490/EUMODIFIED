@@ -1,0 +1,420 @@
+# Major city bonuses - granted if certain countries own certain major cities. Lost otherwise.
+# 
+# Owning the following cities grants significant pretige to whoever owns them: 
+#
+# start to 1599: Constantinople, Rome, Venice, Alexandria, Jerusalem, Mecca, Paris, 
+#                Beijing, Tokyo, Vijayanager, Naples
+# 1600 to 1699:  Constantinople, Rome, Venice, Alexandria, Jerusalem, Mecca, Paris, 
+#                Beijing, Tokyo, Vijayanager, Naples, London
+# 1700 to End:   Constantinople, Rome, Venice, Alexandria, Jerusalem, Mecca, Paris, 
+#                Beijing, Tokyo, Vijayanager, Naples, London, Amsterdam, Moscow
+#
+# NOTE: Paris exclusive to France until 1700
+#
+# Special cities:
+# Granada - Cordoba, Toledo
+
+# Great Cities
+city_constantinople = {
+	potential = { 
+		OR = { 
+			151 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 151
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			151 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 151
+				}
+			}
+		}
+	} 
+	
+	prestige = 3
+}
+
+# After the peace, Rome loses some luster since the Pope has lost significant authority
+city_rome = {
+	potential = { 
+		papacy_active = yes
+		PAP = { NOT = { has_country_modifier = pap_peace_of_westphalia } }
+		OR = { 
+			118 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 181
+				}
+			}
+		}
+	}
+	trigger = { 
+		papacy_active = yes
+		PAP = { NOT = { has_country_modifier = pap_peace_of_westphalia } }
+		OR = { 
+			118 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 118
+				}
+			}
+		}
+	}
+
+	prestige = 2
+	papal_influence = 2
+}
+
+city_venice = {
+	potential = { 
+		OR = { 
+			112 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 112
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			112 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 112
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_alexandria = {
+	potential = { 
+		OR = { 
+			358 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 358
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			358 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 358
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_jerusalem = {
+	potential = {
+		OR = { 
+			379 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 379
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			379 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 379
+				}
+			}
+		}
+	}
+
+	prestige = 3
+	missionaries = 1
+}
+
+city_mecca = {
+	potential = { 
+		OR = { 
+			385 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 385
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			385 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 385
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+# Paris is really only important for France until 1700
+city_paris = {
+	potential = { 
+		OR = {
+			tag = FRA
+			is_year = 1700
+		}
+		OR = { 
+			183 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 183
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = {
+			tag = FRA
+			is_year = 1700
+		}
+		OR = { 
+			183 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 183
+				}
+			}
+		}
+	}
+
+	prestige = 1
+}
+
+city_beijing = {
+	potential = { 
+		OR = { 
+			1816 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 1816
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			1816 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 1816
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_vijayanager = {
+	potential = { 
+		OR = { 
+			1816 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 1816
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			1816 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 1816
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_naples = {
+	potential = { 
+		OR = { 
+			121 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 121
+				}
+			}
+		}
+	}
+	trigger = { 
+		OR = { 
+			121 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 121
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_london = {
+	potential = { 
+		is_year = 1600
+		OR = { 
+			236 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 236
+				}
+			}
+		}
+	}
+	trigger = { 
+		is_year = 1600
+		OR = { 
+			236 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 236
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_amsterdam = {
+	potential = { 
+		is_year = 1700
+		OR = { 
+			97 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 97
+				}
+			}
+		}
+	}
+	trigger = { 
+		is_year = 1700
+		OR = { 
+			97 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 97
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+city_moscow = {
+	potential = { 
+		is_year = 1700
+		OR = { 
+			295 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 295
+				}
+			}
+		}
+	}
+	trigger = { 
+		is_year = 1700
+		OR = { 
+			295 = { owned_by = ROOT } 
+			any_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+					owns = 295
+				}
+			}
+		}
+	}
+
+	prestige = 2
+}
+
+# Special cities for Cordoba
+city_gra_cordoba = {
+	potential = { 
+		OR = {
+			tag = GRA
+			tag = ADL
+		}
+		225 = { owned_by = ROOT } 
+	}
+	trigger = { 
+		225 = { owned_by = ROOT } 
+	}
+
+	prestige = 1
+}
+
+city_gra_toledo = {
+	potential = { 
+		OR = {
+			tag = GRA
+			tag = ADL
+		}
+		219 = { owned_by = ROOT } 
+	}
+	trigger = { 
+		219 = { owned_by = ROOT } 
+	}
+
+	prestige = 2
+}

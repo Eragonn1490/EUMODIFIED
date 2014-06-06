@@ -13,7 +13,7 @@ country_event = {
 		
 		add_prestige = 10
 		
-		any_country = {
+		every_country = {
 			limit = { 
 				has_country_modifier = emperor_decides
 			}
@@ -29,7 +29,7 @@ country_event = {
 		 
 		 add_prestige = 10
 		
-		 any_country = {
+		 every_country = {
 			limit = { 
 				has_country_modifier = emperor_decides
 			}
@@ -53,8 +53,7 @@ country_event = {
     name = eum_joinhre.overlordr1o
 		
 		remove_country_modifier = emperor_decides
-		ROOT = {
-			every_owned_province = {
+		every_owned_province = {
 				if = {
 					limit = {
 							continent = europe 
@@ -63,7 +62,6 @@ country_event = {
 					add_base_tax = 1
 				}
 			}
-		}
     }
 }
 
@@ -78,9 +76,7 @@ country_event = {
   option = {
     name = eum_joinhre.overlordr2o
 		
-		ROOT = {
 			remove_country_modifier = emperor_decides
 			remove_country_modifier = centralization_modifier
-		}
   }
 }

@@ -1,0 +1,98 @@
+SPA_ideas = {
+	start = {
+		land_morale = 0.10
+		missionaries = 1
+	}
+	
+	bonus = {
+		global_colonial_growth = 25
+	}
+	
+	trigger = {
+		OR = {
+			tag = SPA
+			tag = CAS
+		}
+	}
+	free = yes		#will be added at load.
+
+	the_reconquista = {
+		discipline = 0.10
+		colonists = 1
+		army_tradition_decay = -0.01
+	}
+	spanish_inquisition = {
+		global_missionary_strength = 0.02
+	 	tolerance_heretic = -1
+	 	tolerance_heathen = -1
+	}
+	devout_catholisism = {
+		papal_influence = 3
+		infantry_power = 0.05
+	}
+	inter_caetera = {
+		idea_claim_colonies = yes
+		diplomatic_upkeep = 2
+	}
+
+	gold_fleet = {
+		global_tariffs = 0.15
+		inflation_reduction = 0.2
+	}
+
+	spanish_armada = {
+		heavy_ship_power = 0.10
+		light_ship_power = 0.15
+	}
+
+	open_up_the_guilds = {
+		global_trade_income_modifier = 0.1
+		land_morale = 0.10
+		army_tradition_decay = -0.01
+	}
+}
+
+HAB_ideas = {
+	start = {
+		prestige_decay = -0.02
+		relations_decay_of_me = 0.3
+	}
+	
+	bonus = {
+		heir_chance = 0.50
+	}
+	
+	trigger = {
+		OR = {
+			tag = HAB
+			AND = {
+				tag = STY
+				dynasty = "von Habsburg"
+			}
+		}
+	}
+	free = yes		#will be added at load.
+
+	imperial_ambitions = {
+		imperial_authority = 0.1
+	}
+	military_border = {
+		defensiveness = 0.2
+	}
+	army_professionalism = {
+		land_morale = 0.05
+	}
+	habsburg_dominance = {
+		diplomatic_reputation = 5
+	}
+	edict_of_restitution = {
+		tolerance_own = 1
+		global_missionary_strength = 0.02
+	}
+	austrian_court = {
+		diplomatic_upkeep = 2
+	}
+	hofkriegsrat = {
+		reinforce_speed = 0.3
+	}
+}
