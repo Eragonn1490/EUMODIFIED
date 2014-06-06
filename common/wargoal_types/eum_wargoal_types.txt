@@ -1,0 +1,51 @@
+# Reclaim
+take_subject_core = {
+	type = take_core
+
+	attacker = {
+		badboy_factor = 2
+		prestige_factor = 1.5
+		peace_cost_factor = 1
+
+		allowed_provinces = {
+		    any_core_country = {
+			is_subject_of = ROOT
+		    }
+		}
+		
+		po_demand_provinces = no
+		po_return_cores = yes
+		po_revoke_cores = yes
+				
+		prov_desc = ALL_CORES
+	}
+	
+	defender = {
+		badboy_factor = 0.25
+		prestige_factor = 1
+		peace_cost_factor = 0.75
+
+		allowed_provinces = {
+			is_core = FROM
+		}
+		
+		po_annex = yes
+		po_demand_provinces = yes
+		
+		prov_desc = ALL_CORES	
+	}
+	
+	war_name = CORE_WAR_NAME
+}
+
+EUM_dynasticunion_wargoal = {
+	type = take_capital
+	
+	badboy_factor = 1
+	prestige_factor = 1
+	peace_cost_factor = 0.5
+	
+	po_form_personal_union = yes
+	
+	war_name = EUM_dynasticunion_WAR_NAME
+}

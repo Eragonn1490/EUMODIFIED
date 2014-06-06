@@ -46,7 +46,7 @@ join_hre = {
 					duration = 7300
 				}
 				add_prestige = 25
-				country_event = { id = eum_joinhre.1 days = 0 }
+				country_event = { id = eum_joinhre.1 }
 			}
 		}
 	}

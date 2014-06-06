@@ -1,0 +1,38 @@
+# Lets Forcibly Unify our realms
+cb_eum_form_personal_union = {
+	
+	is_triggered_only = yes
+
+	months = 65
+	
+	war_goal = EUM_dynasticunion_wargoal
+}
+
+# Claim Throne
+cb_cross_claim_throne = {
+
+	prerequisites = {
+		is_neighbor_of = FROM
+		marriage_with = FROM
+		succession_claim = FROM
+		NOT = { dynasty = FROM }
+	}
+
+	months = 45
+
+	po_form_personal_union = yes
+	
+	war_goal = take_capital_throne
+}
+
+# Reclaim Subjects land
+cb_subject_core = {
+	
+	prerequisites = {
+		any_subject_country = {
+			core_claim = FROM
+		}
+	}
+
+	war_goal = take_subject_core
+}

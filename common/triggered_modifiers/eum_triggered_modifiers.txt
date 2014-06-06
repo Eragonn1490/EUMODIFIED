@@ -1,0 +1,549 @@
+###########################################
+# Corners of the Globe
+###########################################
+eum_corners_of_globe_trigger = {
+	potential = {
+		is_year = 1600
+		num_of_cities = 75
+	}
+
+	trigger = {
+		OR = {
+			any_owned_province = {
+				continent = europe
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = europe
+					is_city = yes
+				}	
+			}
+		}
+		OR = {
+			any_owned_province = {
+				continent = africa
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = africa
+					is_city = yes
+				}	
+			}
+		}
+		OR = {
+			any_owned_province = {
+				continent = asia
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = asia
+					is_city = yes
+				}	
+			}
+		}
+		OR = {
+			any_owned_province = {
+				continent = oceania
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = oceania
+					is_city = yes
+				}	
+			}
+		}
+		OR = {
+			any_owned_province = {
+				continent = north_america
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = north_america
+					is_city = yes
+				}	
+			}
+		}
+		OR = {
+			any_owned_province = {
+				continent = south_america
+				is_city = yes
+			}
+			
+			any_subject_country = {
+				any_owned_province = {
+					continent = south_america
+					is_city = yes
+				}	
+			}
+		}
+	}
+	
+	#Country Bonus' For Country out of 100%
+	manpower_recovery_speed = 0.20
+	land_morale = 0.20
+	naval_morale = 0.20
+	global_tariffs = 0.10
+	core_creation = -0.20
+	global_regiment_recruit_speed = -0.5
+	global_manpower = 0.5
+	#Troops / Trade Bonus 40%
+	infantry_power = 0.5
+	trade_steering = 0.15
+	discipline = 0.10
+	global_regiment_cost = 0.10
+}
+
+###########################################
+# Italian Renaissance
+###########################################
+TH_italian_renaissance_trigger = {
+	potential = {
+		every_core_province = {
+			limit = {
+				region = italian_region
+			}
+		}
+	}
+
+	trigger = {
+		not = { is_year = 1500 }
+	}
+
+	prestige = 0.25
+	technology_cost = -0.05
+	idea_cost = -0.05
+}
+
+###########################################
+# Overseas Empire
+###########################################
+eum_overseas_empire_trigger = {
+	potential = {
+		OR = {
+			technology_group = western
+			technology_group = eastern
+		}
+	}
+
+	trigger = {
+	
+		capital_scope = { continent = europe }
+		
+		num_of_cities = 20
+		
+		mercantilism = 0.3
+			
+		OR = {
+			overseas_provinces_percentage = 0.60
+				
+			any_subject_country = {  
+				NOT = { capital_scope = { continent = europe } }
+			}
+	}
+	
+	naval_forcelimit_modifier = 0.25
+	prestige = 1
+	global_colonial_growth = 10
+	global_trade_income_modifier = 0.05	#5% more trade income.
+}
+
+###########################################
+# Imperial Ambition
+###########################################
+eum_imperial_ambition_trigger = {
+	potential = {
+		has_discovered = 118	# Roma
+		has_discovered = 151	# Constantinople
+		has_discovered = 358	# Alexandria
+	}
+
+	trigger = {
+		owns = 118 # Roma
+		owns = 151 # Constantinople
+		owns = 358 # Alexandria
+	}
+
+	legitimacy = 1
+	prestige = 1
+}
+
+###########################################
+# Middle Passage
+###########################################
+eum_middle_passage_trigger = {
+	potential = {
+		NOT = { has_country_modifier = the_abolish_slavery_act }
+	}
+
+	trigger = {
+	
+		any_active_trade_node = {
+			OR = {
+				province_id = 1500 # Chesapeake Bay
+				province_id = 1516 # Caribbean
+				province_id = 1531 # Brazil
+			}
+		}
+		
+		OR = { 
+
+			any_owned_province = {
+					trade_goods = slaves
+			}
+			any_subject_country = {
+				any_owned_province = {
+					trade_goods = slaves
+				}
+			}
+		}
+	}
+
+	production_efficiency = 0.10
+	global_colonial_growth = 15
+	stability_cost_modifier = 0.10
+	global_tax_modifier = 0.02
+	global_trade_income_modifier = 0.05	#5% more trade income.
+}
+
+###########################################
+# Extra Merchant for larger empires
+###########################################
+eum_extra_merchants1 = {
+	potential = {
+		num_of_cities = 5
+		}
+	trigger = {
+		num_of_cities = 15
+		adm_tech = 10
+		OR = {
+			has_idea = competetive_merchants
+			has_idea = trade_manipulation
+		}
+	}
+
+	global_trade_income_modifier = 0.02	#3% more trade income.
+	merchants = 1
+}
+
+eum_extra_merchants2 = {
+	potential = {
+		num_of_cities = 20
+		adm_tech = 12
+		}
+	trigger = {
+	num_of_cities = 30
+		OR = {
+		has_idea = competetive_merchants
+		has_idea = trade_manipulation
+		}
+	}
+
+	global_trade_income_modifier = 0.02	#3% more trade income.
+	merchants = 1
+}
+
+eum_extra_merchants3 = {
+	potential = {
+		num_of_cities = 30
+		adm_tech = 15
+		}
+	trigger = {
+	num_of_cities = 70
+		OR = {
+		has_idea = competetive_merchants
+		has_idea = trade_manipulation
+		}
+	}
+	
+	trade_steering = 0.05                   #5% more trade steering.
+	global_trade_income_modifier = 0.03	#3% more trade income.
+	merchants = 1
+}
+
+###########################################
+# Caribbean Pirates Defeated
+###########################################
+caribbean_pirates = {
+	potential = {
+		has_discovered = 482	# Bahamas
+		has_discovered = 487	# Jamaica
+		has_discovered = 489	# Tortuga
+	}
+
+	trigger = {
+		has_country_modifier = the_anti_piracy_act
+		num_of_light_ship = 40
+		
+		OR = {
+			OR = {
+				owns = 482 # Bahamas
+				owns = 487 # Jamaica
+				owns = 489 # Tortuga
+			}
+			
+			OR = {
+				any_subject_country = { 
+					owns = 482 # Bahamas
+					owns = 487 # Jamaica
+					owns = 489 # Tortuga 
+				}
+			}
+		}
+	}
+
+	prestige = 1
+	naval_maintenance_modifier = -0.10
+	trade_efficiency = 0.2
+	global_trade_income_modifier = 0.05	#5% more trade income.
+}
+
+###########################################
+# Australian Penal Colony
+###########################################
+TH_penal_colony_trigger = {
+	potential = {
+		OR = {
+			technology_group = western
+			technology_group = eastern
+		}
+	}
+
+	trigger = {
+		capital_scope = { continent = europe }
+		OR = {
+			any_owned_province = {
+				region = australian_coast
+			}
+			any_subject_country = { 
+				any_owned_province = {
+					region = australian_coast
+				}
+			}
+		}
+	}
+
+	global_revolt_risk = -1
+	global_tax_modifier = 0.02
+}
+
+###########################################
+# Age of Exploration by GAGA Extrem & CJ
+###########################################
+age_of_exploration = {
+	potential = {
+		technology_group = western
+	}
+	trigger = {
+		is_year = 1600
+		num_of_ports = 1
+		num_of_cities = 5
+	}
+	colonists = 1
+	merchants = 1
+}
+
+##################################################
+# trade Bonus for HRE
+##################################################
+trade_hre = {
+	potential = {
+		is_part_of_hre = yes
+	}
+
+	trigger = {
+		hre_size = 10
+		adm_tech = 10
+		stability = 1
+	}
+	
+	trade_efficiency = 0.2			#5% more trade efficiency.
+	global_tax_modifier = 0.02		#5% more tax from tradinh.
+	trade_steering = 0.05                   #5% more trade steering.
+	global_trade_income_modifier = 0.05	#5% more trade income.
+	#icon = 3
+}
+
+######################################
+# Control of Gibraltar Trade Route.
+######################################
+gibraltar_trade = {
+	potential = {
+		OR = {
+		has_discovered = 226	# Ceuta
+		has_discovered = 334	# Tangiers
+		}
+
+		OR = {
+		has_discovered = 1749	# Cadiz
+		has_discovered = 1751	# Gibraltar
+		}
+	}
+
+	trigger = {
+		OR = {
+		owns = 1751	 # Ceuta
+		owns = 334 	 # Tangiers
+		}
+		
+		OR = {
+		owns = 1749 	 # Cadiz
+		owns = 226 	 # Gibraltar
+		}
+	}
+	
+	trade_steering = 0.02 			#2% more trade steering.
+	global_tax_modifier = 0.1               #10% more tax income.
+	global_trade_income_modifier = 0.12	#12% more trade income.
+	prestige = 0.02			#1% more yearly prestige
+	#icon = 9
+}
+
+######################################
+# Non-Papal control of Rome.
+######################################
+non_papal_rome = {
+	potential = {
+		has_discovered = 118	# Roma
+	}
+
+	trigger = {
+		owns = 118 # Roma
+		NOT = { 118 =  { owned_by = PAP } }
+	}
+
+	prestige = 2			#2% more yearly prestige
+	missionaries = 1
+	#icon = 9
+}
+
+######################################
+# Christian control of Alexandria.
+######################################
+christian_alex = {
+	potential = {
+		has_discovered = 358	# Alexandria
+		religion_group = christian
+	}
+
+	trigger = {
+		owns = 358 # Alexandria
+	}
+
+	prestige = 1			#2% more yearly prestige
+	technology_cost = -0.2
+	#icon = 9
+}
+
+######################################
+# Christian control of Medina.
+######################################
+christian_medina = {
+	potential = {
+		has_discovered = 384	# Medina
+		religion_group = christian
+	}
+
+	trigger = {
+		owns = 384 # Mecca
+	}
+
+	prestige = 1			#1% more yearly prestige
+	missionaries = 1
+	#icon = 9
+}
+
+######################################
+# Control of Bosporus Trade Route.
+######################################
+bosporus_trade = {
+	potential = {
+		has_discovered = 151	# Constantonople
+		has_discovered = 316	# Izmit
+	}
+
+	trigger = {
+		owns = 151 # Constantonople
+		owns = 316 # Izmit
+	}
+	
+	global_tax_modifier = 0.08
+	global_trade_income_modifier = 0.28	#28% more trade income.
+	prestige = 1			#1% more yearly prestige
+	merchants = 1
+	#icon = 9
+}
+
+######################################
+# Control of Redsea Trade Route.
+######################################
+redsea_trade = {
+	potential = {
+		has_discovered = 1215	# tajura
+		has_discovered = 387	# Mocha
+	}
+
+	trigger = {
+		owns = 1215 # tajura
+		owns = 387 # Mocha
+	}
+	
+	global_tax_modifier = 0.05
+	global_trade_income_modifier = 0.2	#20% more trade income.
+	prestige = 1			#1% more yearly prestige
+	merchants = 1
+	#icon = 9
+}
+
+######################################
+# Medici Bankers.
+######################################
+medici_banks = {
+	potential = {
+		has_discovered = 116	# Tuscan Capital
+	}
+
+	trigger = {
+		OR = {
+			OR = {	#Controls Tuscan Land
+				AND = {
+				 owns = 116 # Tuscan Capital
+				 is_core = 116
+				 }
+			}
+			
+			OR = { #Allied To Tuscany, With Modifier
+				AND = {
+					any_ally = { 
+						has_opinion = { who = ROOT value = 100 } 
+						owns = 116 # Tuscan Capital
+					}
+					ROOT = { has_country_modifier = medici_bankers }
+				}
+			}
+			
+			OR = {	#Overlord of Tuscany
+				AND = {
+					any_subject_country = { 
+						owns = 116 # Tuscan Capital
+					}
+				
+					 ROOT = { has_country_modifier = medici_bankers }
+				}
+			}
+		  }
+		 }
+	
+		#Effects
+		inflation_reduction = 0.35            	#Reduce that inflation
+		global_trade_income_modifier = 0.05	    #5% more trade income.	
+}

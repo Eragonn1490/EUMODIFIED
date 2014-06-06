@@ -1,0 +1,76 @@
+#########################################################
+#			Meteor sighted							  	#
+#########################################################
+country_event = {
+	id = 5060
+	title = "EVTNAME5060"
+	desc = "EVTDESC5060"
+	picture = COMET_SIGHTED_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.1
+			has_idea = comets
+		}
+		
+		modifier = {
+			factor = 0.5
+			natural_scientist = 1
+		}
+		modifier = {
+			factor = 0.5
+			luck = yes
+		}
+		modifier = {
+			factor = 1.1
+			stability = 2
+		}
+		modifier = {
+			factor = 1.1
+			stability = 3
+		}
+	}
+
+	option = {
+		name = "EVTOPTA5060"		# It's an omen
+		
+		random_list = {
+			10 = {
+				add_stability = -1
+			}
+			10 = {
+				add_stability = 1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB5060"		# The end is nigh!
+		
+		random_list = {
+			10 = {
+				add_stability = -1
+			}
+			10 = {
+				add_stability = 1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC5060"		# The economy, fools!
+		
+		random_list = {
+			10 = {
+				add_stability = -1
+			}
+			10 = {
+				add_stability = 1
+			}
+		}
+	}	
+}
