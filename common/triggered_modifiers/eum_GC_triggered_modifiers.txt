@@ -20,10 +20,8 @@ city_constantinople = {
 		OR = { 
 			151 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 151
-				}
 			}
 		}
 	}
@@ -31,10 +29,8 @@ city_constantinople = {
 		OR = { 
 			151 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 151
-				}
 			}
 		}
 	} 
@@ -50,10 +46,8 @@ city_rome = {
 		OR = { 
 			118 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 181
-				}
 			}
 		}
 	}
@@ -63,10 +57,8 @@ city_rome = {
 		OR = { 
 			118 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 118
-				}
 			}
 		}
 	}
@@ -80,10 +72,8 @@ city_venice = {
 		OR = { 
 			112 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 112
-				}
 			}
 		}
 	}
@@ -91,10 +81,8 @@ city_venice = {
 		OR = { 
 			112 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 112
-				}
 			}
 		}
 	}
@@ -107,10 +95,8 @@ city_alexandria = {
 		OR = { 
 			358 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 358
-				}
 			}
 		}
 	}
@@ -118,10 +104,8 @@ city_alexandria = {
 		OR = { 
 			358 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 358
-				}
 			}
 		}
 	}
@@ -134,10 +118,8 @@ city_jerusalem = {
 		OR = { 
 			379 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 379
-				}
 			}
 		}
 	}
@@ -145,10 +127,8 @@ city_jerusalem = {
 		OR = { 
 			379 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 379
-				}
 			}
 		}
 	}
@@ -162,10 +142,8 @@ city_mecca = {
 		OR = { 
 			385 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 385
-				}
 			}
 		}
 	}
@@ -173,10 +151,8 @@ city_mecca = {
 		OR = { 
 			385 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 385
-				}
 			}
 		}
 	}
@@ -194,10 +170,8 @@ city_paris = {
 		OR = { 
 			183 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 183
-				}
 			}
 		}
 	}
@@ -209,10 +183,8 @@ city_paris = {
 		OR = { 
 			183 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 183
-				}
 			}
 		}
 	}
@@ -225,10 +197,8 @@ city_beijing = {
 		OR = { 
 			1816 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 1816
-				}
 			}
 		}
 	}
@@ -236,10 +206,8 @@ city_beijing = {
 		OR = { 
 			1816 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 1816
-				}
 			}
 		}
 	}
@@ -252,10 +220,8 @@ city_vijayanager = {
 		OR = { 
 			1816 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 1816
-				}
 			}
 		}
 	}
@@ -263,10 +229,8 @@ city_vijayanager = {
 		OR = { 
 			1816 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 1816
-				}
 			}
 		}
 	}
@@ -279,10 +243,8 @@ city_naples = {
 		OR = { 
 			121 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 121
-				}
 			}
 		}
 	}
@@ -290,10 +252,8 @@ city_naples = {
 		OR = { 
 			121 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 121
-				}
 			}
 		}
 	}
@@ -307,10 +267,8 @@ city_london = {
 		OR = { 
 			236 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 236
-				}
 			}
 		}
 	}
@@ -319,10 +277,8 @@ city_london = {
 		OR = { 
 			236 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 236
-				}
 			}
 		}
 	}
@@ -336,10 +292,8 @@ city_amsterdam = {
 		OR = { 
 			97 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 97
-				}
 			}
 		}
 	}
@@ -348,10 +302,8 @@ city_amsterdam = {
 		OR = { 
 			97 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 97
-				}
 			}
 		}
 	}
@@ -365,10 +317,8 @@ city_moscow = {
 		OR = { 
 			295 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 295
-				}
 			}
 		}
 	}
@@ -377,10 +327,8 @@ city_moscow = {
 		OR = { 
 			295 = { owned_by = ROOT } 
 			any_subject_country = {
-				limit = {
 					is_lesser_in_union = yes
 					owns = 295
-				}
 			}
 		}
 	}

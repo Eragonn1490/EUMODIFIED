@@ -3,9 +3,9 @@ take_subject_core = {
 	type = take_core
 
 	attacker = {
-		badboy_factor = 2
+		badboy_factor = 0.5
 		prestige_factor = 1.5
-		peace_cost_factor = 1
+		peace_cost_factor = 0.2
 
 		allowed_provinces = {
 		    any_core_country = {

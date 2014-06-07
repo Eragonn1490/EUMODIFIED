@@ -7,19 +7,7 @@ country_event = {
 	picture = LAND_MILITARY_eventPicture
 	
 	trigger = {
-		OR = {
-			any_owned_province = {
-				region = Helvetia
-				is_city = yes
-			}
-			
-			any_subject_country = {
-				any_owned_province = {
-					region = Helvetia
-					is_city = yes
-				}
-			}
-		}
+		Helvetia = { country_or_vassal_holds = ROOT }
 		NOT = { manpower_percentage = 60 }
 		num_of_cities = 5
 		is_at_war = yes		 

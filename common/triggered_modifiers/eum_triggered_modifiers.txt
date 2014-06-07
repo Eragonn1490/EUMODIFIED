@@ -108,15 +108,13 @@ eum_corners_of_globe_trigger = {
 ###########################################
 TH_italian_renaissance_trigger = {
 	potential = {
-		every_core_province = {
-			limit = {
-				region = italian_region
-			}
-		}
+		not = { is_year = 1500 }
 	}
 
 	trigger = {
-		not = { is_year = 1500 }
+		any_owned_province = {
+			region = italian_region
+		}
 	}
 
 	prestige = 0.25
@@ -149,12 +147,10 @@ eum_overseas_empire_trigger = {
 			any_subject_country = {  
 				NOT = { capital_scope = { continent = europe } }
 			}
+		}
 	}
 	
-	naval_forcelimit_modifier = 0.25
-	prestige = 1
-	global_colonial_growth = 10
-	global_trade_income_modifier = 0.05	#5% more trade income.
+	global_tax_modifier = 0.5
 }
 
 ###########################################
@@ -271,46 +267,9 @@ eum_extra_merchants3 = {
 }
 
 ###########################################
-# Caribbean Pirates Defeated
-###########################################
-caribbean_pirates = {
-	potential = {
-		has_discovered = 482	# Bahamas
-		has_discovered = 487	# Jamaica
-		has_discovered = 489	# Tortuga
-	}
-
-	trigger = {
-		has_country_modifier = the_anti_piracy_act
-		num_of_light_ship = 40
-		
-		OR = {
-			OR = {
-				owns = 482 # Bahamas
-				owns = 487 # Jamaica
-				owns = 489 # Tortuga
-			}
-			
-			OR = {
-				any_subject_country = { 
-					owns = 482 # Bahamas
-					owns = 487 # Jamaica
-					owns = 489 # Tortuga 
-				}
-			}
-		}
-	}
-
-	prestige = 1
-	naval_maintenance_modifier = -0.10
-	trade_efficiency = 0.2
-	global_trade_income_modifier = 0.05	#5% more trade income.
-}
-
-###########################################
 # Australian Penal Colony
 ###########################################
-TH_penal_colony_trigger = {
+eum_penal_colony_trigger = {
 	potential = {
 		OR = {
 			technology_group = western
@@ -334,6 +293,7 @@ TH_penal_colony_trigger = {
 
 	global_revolt_risk = -1
 	global_tax_modifier = 0.02
+	prestige = 0.01
 }
 
 ###########################################
