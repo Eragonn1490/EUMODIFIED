@@ -106,7 +106,7 @@ eum_corners_of_globe_trigger = {
 ###########################################
 # Italian Renaissance
 ###########################################
-TH_italian_renaissance_trigger = {
+eum_italian_renaissance_trigger = {
 	potential = {
 		not = { is_year = 1500 }
 	}
