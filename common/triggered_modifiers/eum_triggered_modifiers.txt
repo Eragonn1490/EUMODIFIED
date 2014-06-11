@@ -1,4 +1,29 @@
 ###########################################
+# Italian Acceptance
+###########################################
+eum_italian_acceptance_trigger = {
+	potential = {
+		has_discovered = 118	# Roma
+	}
+
+	trigger = {
+		OR = {
+			owns = 118 # Roma
+			AND = {
+				num_of_owned_provinces_with = {
+					value = 4
+					any_owned_province = {
+						region = italian_region
+					}
+				}
+			}
+		}	
+	}
+
+	stability_cost_modifier = -0.05
+}
+
+###########################################
 # Corners of the Globe
 ###########################################
 eum_corners_of_globe_trigger = {
@@ -106,17 +131,15 @@ eum_corners_of_globe_trigger = {
 ###########################################
 # Italian Renaissance
 ###########################################
-TH_italian_renaissance_trigger = {
+eum_italian_renaissance_trigger = {
 	potential = {
-		every_core_province = {
-			limit = {
-				region = italian_region
-			}
-		}
+		not = { is_year = 1500 }
 	}
 
 	trigger = {
-		not = { is_year = 1500 }
+		any_owned_province = {
+			region = italian_region
+		}
 	}
 
 	prestige = 0.25
@@ -149,12 +172,11 @@ eum_overseas_empire_trigger = {
 			any_subject_country = {  
 				NOT = { capital_scope = { continent = europe } }
 			}
+		}
 	}
 	
-	naval_forcelimit_modifier = 0.25
-	prestige = 1
-	global_colonial_growth = 10
-	global_trade_income_modifier = 0.05	#5% more trade income.
+	global_tax_modifier = 0.5
+	naval_forcelimit = 10
 }
 
 ###########################################
@@ -223,9 +245,9 @@ eum_extra_merchants1 = {
 		num_of_cities = 5
 		}
 	trigger = {
-		num_of_cities = 15
 		adm_tech = 10
 		OR = {
+			num_of_cities = 10
 			has_idea = competetive_merchants
 			has_idea = trade_manipulation
 		}
@@ -271,46 +293,9 @@ eum_extra_merchants3 = {
 }
 
 ###########################################
-# Caribbean Pirates Defeated
-###########################################
-caribbean_pirates = {
-	potential = {
-		has_discovered = 482	# Bahamas
-		has_discovered = 487	# Jamaica
-		has_discovered = 489	# Tortuga
-	}
-
-	trigger = {
-		has_country_modifier = the_anti_piracy_act
-		num_of_light_ship = 40
-		
-		OR = {
-			OR = {
-				owns = 482 # Bahamas
-				owns = 487 # Jamaica
-				owns = 489 # Tortuga
-			}
-			
-			OR = {
-				any_subject_country = { 
-					owns = 482 # Bahamas
-					owns = 487 # Jamaica
-					owns = 489 # Tortuga 
-				}
-			}
-		}
-	}
-
-	prestige = 1
-	naval_maintenance_modifier = -0.10
-	trade_efficiency = 0.2
-	global_trade_income_modifier = 0.05	#5% more trade income.
-}
-
-###########################################
 # Australian Penal Colony
 ###########################################
-TH_penal_colony_trigger = {
+eum_penal_colony_trigger = {
 	potential = {
 		OR = {
 			technology_group = western
@@ -319,10 +304,12 @@ TH_penal_colony_trigger = {
 	}
 
 	trigger = {
-		capital_scope = { continent = europe }
 		OR = {
-			any_owned_province = {
-				region = australian_coast
+			AND = {
+				capital_scope = { continent = europe }
+				any_owned_province = {
+					region = australian_coast
+				}
 			}
 			any_subject_country = { 
 				any_owned_province = {
@@ -333,13 +320,14 @@ TH_penal_colony_trigger = {
 	}
 
 	global_revolt_risk = -1
-	global_tax_modifier = 0.02
+	global_tax_modifier = 0.04
+	prestige = 0.01
 }
 
 ###########################################
 # Age of Exploration by GAGA Extrem & CJ
 ###########################################
-age_of_exploration = {
+eum_age_of_exploration = {
 	potential = {
 		technology_group = western
 	}
@@ -355,7 +343,7 @@ age_of_exploration = {
 ##################################################
 # trade Bonus for HRE
 ##################################################
-trade_hre = {
+eum_trade_hre = {
 	potential = {
 		is_part_of_hre = yes
 	}
@@ -376,7 +364,7 @@ trade_hre = {
 ######################################
 # Control of Gibraltar Trade Route.
 ######################################
-gibraltar_trade = {
+eum_gibraltar_trade = {
 	potential = {
 		OR = {
 		has_discovered = 226	# Ceuta
@@ -411,9 +399,10 @@ gibraltar_trade = {
 ######################################
 # Non-Papal control of Rome.
 ######################################
-non_papal_rome = {
+eum_non_papal_rome = {
 	potential = {
 		has_discovered = 118	# Roma
+		owns = 118 # Roma
 	}
 
 	trigger = {
@@ -421,7 +410,7 @@ non_papal_rome = {
 		NOT = { 118 =  { owned_by = PAP } }
 	}
 
-	prestige = 2			#2% more yearly prestige
+	prestige = 0.5			#2% more yearly prestige
 	missionaries = 1
 	#icon = 9
 }
@@ -429,7 +418,7 @@ non_papal_rome = {
 ######################################
 # Christian control of Alexandria.
 ######################################
-christian_alex = {
+eum_christian_alex = {
 	potential = {
 		has_discovered = 358	# Alexandria
 		religion_group = christian
@@ -439,15 +428,15 @@ christian_alex = {
 		owns = 358 # Alexandria
 	}
 
-	prestige = 1			#2% more yearly prestige
-	technology_cost = -0.2
+	prestige = 1			# 1% more yearly prestige
+	technology_cost = -0.02
 	#icon = 9
 }
 
 ######################################
 # Christian control of Medina.
 ######################################
-christian_medina = {
+eum_christian_medina = {
 	potential = {
 		has_discovered = 384	# Medina
 		religion_group = christian
@@ -465,10 +454,14 @@ christian_medina = {
 ######################################
 # Control of Bosporus Trade Route.
 ######################################
-bosporus_trade = {
+eum_bosporus_trade = {
 	potential = {
 		has_discovered = 151	# Constantonople
 		has_discovered = 316	# Izmit
+		OR = {
+			owns = 151 # Constantonople
+			owns = 316 # Izmit
+		}
 	}
 
 	trigger = {
@@ -486,7 +479,7 @@ bosporus_trade = {
 ######################################
 # Control of Redsea Trade Route.
 ######################################
-redsea_trade = {
+eum_redsea_trade = {
 	potential = {
 		has_discovered = 1215	# tajura
 		has_discovered = 387	# Mocha
@@ -507,7 +500,7 @@ redsea_trade = {
 ######################################
 # Medici Bankers.
 ######################################
-medici_banks = {
+eum_medici_banks = {
 	potential = {
 		has_discovered = 116	# Tuscan Capital
 	}

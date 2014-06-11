@@ -1,6 +1,6 @@
 country_decisions = {
 
-	formjerusalemsa = {
+	eum_formjerusalemsa = {
 	
 		major = yes
 		

@@ -1,0 +1,57 @@
+###########################################
+# Caribbean Pirates Defeated
+###########################################
+eum_caribbean_pirates = {
+	potential = {
+		has_country_modifier = the_anti_piracy_act
+		has_discovered = 482	# Bahamas
+		has_discovered = 487	# Jamaica
+		has_discovered = 489	# Tortuga
+	}
+
+	trigger = {
+		num_of_light_ship = 40
+		OR = {
+			owns = 482 # Bahamas
+			owns = 487 # Jamaica
+			owns = 489 # Tortuga
+			any_subject_country = { 
+				OR = {
+					owns = 482 # Bahamas
+					owns = 487 # Jamaica
+					owns = 489 # Tortuga
+				}
+			}
+		}
+	}
+	
+	stability_cost_modifier = -0.20
+	light_ship_cost = -0.12
+	global_tax_modifier = 0.02
+}
+######################################
+# Barbary Pirates
+######################################
+eum_barbary_pirates = {
+	potential = {
+		religion_group = christian
+		culture_group = iberian
+		has_country_modifier = the_anti_piracy_act
+	}
+
+	trigger = {
+		OR = {
+			owns = 334 	 # Tangiers
+			owns = 1751	 # Ceuta
+		}
+		OR = {
+			owns = 335	 # Mellila
+			owns = 337	 # Oran
+		}
+	}
+
+	stability_cost_modifier = -0.10
+	prestige = 1
+	light_ship_cost = -0.12
+	global_tax_modifier = 0.01
+}

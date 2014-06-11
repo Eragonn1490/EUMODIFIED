@@ -1,0 +1,363 @@
+namespace = eum_collegeevents
+
+#Nobles Rally to build local college
+province_event = {
+	id = eum_collegeevents.1
+	title = "eum_collegeevents.1.t"
+	 desc = "eum_collegeevents.1.d"
+	picture = DIPLOMACY_eventPicture
+	 
+	 trigger = {
+		random_owned_province = {
+			is_city = yes
+			NOT = { has_province_modifier = site_chosen }
+			NOT = { has_province_modifier = site_cleared }
+			NOT = { has_province_modifier = university_started }
+		}
+		NOT = { has_country_modifier = cooldown_time1 }
+	 }
+	 
+	 mean_time_to_happen = { 
+		months = 12
+	}
+	
+	option = {
+		name = "eum_collegeevents1.option1" # Build University
+		
+		controller = { 
+			#Prevents Popup for another 6 years
+			add_country_modifier = {
+				name = "cooldown_time1"
+				duration = 2190
+				hidden = yes
+			}
+			add_prestige = 5
+			add_legitimacy = 2
+			add_adm_power = -20
+			#The Bill
+			random_list = {
+				10 = {
+					add_treasury = -1000 #National Government pays bill
+				}
+				10 = {
+					add_treasury = -500  #Provincial Government Splits Bill
+				}
+				10 = {
+					add_treasury = 0     #Bill Paid in full by provincial government
+				}
+			}
+		}
+		#The Province
+		add_province_modifier = { 
+			name = "site_chosen"
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "eum_collegeevents1.option2"		# Invest the money in our government
+		
+		add_prestige = -10
+		
+		add_country_modifier = {
+      			name = "cooldown_time1"
+     			duration = 1825
+      			hidden = yes
+    	}
+		
+		random_list = {
+			10 = {
+				country_event = { id = eum_collegeevents.2 }
+			}
+			10 = {
+				country_event = { id = eum_collegeevents.3 }
+			}
+			
+			10 = { 
+				country_event = { id = eum_collegeevents.4 }
+			}		
+	
+			10 = { 
+				country_event = { id = eum_collegeevents.5 }
+			}
+		}
+		ai_chance = { factor = 30 }		
+	}
+	
+	option = {
+		name = "eum_collegeevents1.option3"   # Return the money and deny request for project
+		
+		add_prestige = 5
+		
+		#Prevents Popup for another 6 years
+		add_country_modifier = {
+      		name = "cooldown_time1"
+     		duration = 2190
+      		hidden = yes
+    	}
+	}
+}
+
+
+# Events to Steal Investment for kingdom use.
+country_event = {
+	id = eum_collegeevents.2
+	title = eum_collegeevents.leachfunds1
+	desc  = eum_collegeevents.leachfunds1.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = "eum_collegeevents.leachfunds1.o"
+		
+		add_mil_power = 60
+  }
+}
+
+country_event = {
+	id = eum_collegeevents.3
+	title = eum_collegeevents.leachfunds2
+	desc  = eum_collegeevents.leachfunds2.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = "eum_collegeevents.leachfunds2.o"
+		
+		add_dip_power = 60
+  }
+}
+
+country_event = {
+	id = eum_collegeevents.4
+	title = eum_collegeevents.leachfunds3
+	desc  = eum_collegeevents.leachfunds3.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = "eum_collegeevents.leachfunds3.o"
+		
+		add_adm_power = 60
+  }
+}
+
+country_event = {
+	id = eum_collegeevents.5
+	title = eum_collegeevents.leachfunds4
+	desc  = eum_collegeevents.leachfunds4.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+    name = "eum_collegeevents.leachfunds4.o"
+		
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+  }
+}
+
+# not working below (not sure why)
+
+# Clearing the land
+province_event = {
+	id = eum_collegeevents.6
+	title = eum_collegeevents.cleartheland.t
+	 desc = eum_collegeevents.cleartheland.d
+	picture = DIPLOMACY_eventPicture
+  
+	trigger = {
+		NOT = { has_building = university }
+		has_province_modifier = site_chosen
+	}
+	
+	mean_time_to_happen =  {
+		months = 16
+	}
+  
+  option = {
+		name = "eum_collegeevents.cleartheland.o"
+  
+		random_list = {
+			10 = {
+				add_province_modifier = { 
+					name = "site_cleared"
+					duration = 1825
+				}
+			}
+			10 = {
+				add_province_modifier = { 
+					name = "resource_depleted"
+					duration = 1825
+				}
+			}
+		}
+  }
+}
+
+
+# Unforseen costs
+# Can only be Triggered by second effect from option of event #6
+province_event = {
+	id = eum_collegeevents.7
+	title = eum_collegeevents.extracosts.t
+	desc  = eum_collegeevents.extracosts.d
+	picture = DIPLOMACY_eventPicture
+  
+	trigger = {
+		NOT = { has_building = university }
+		has_province_modifier = resource_depleted
+	}
+  
+	option = {
+		name = "eum_collegeevents.extracosts.o"
+		
+		random_list = {
+			10 = { 
+					controller = { 
+						add_treasury = -500  #National Government pays bill
+					}
+					add_province_modifier = { 
+						name = "site_cleared"
+						duration = 1825
+					}
+			}
+			10 = {
+					controller = { 
+						add_treasury = -250  #Provincial Government Splits Bill
+					}
+					add_province_modifier = { 
+						name = "site_cleared"
+						duration = 1825
+					}
+			}
+			10 = {
+					controller = { 
+						add_treasury = 0     #Bill Paid in full by provincial government
+					}
+					add_province_modifier = { 
+						name = "site_cleared"
+						duration = 1825
+					}
+			}
+			10 = {    
+				controller = { 
+					province_event = { id = eum_collegeevents.8 }  #Event that can Cancel Project completely
+				}
+			}
+		}
+  }
+}
+
+
+province_event = {
+	id = eum_collegeevents.8
+	title = eum_collegeevents.declareroyaldecree.t
+	desc  = eum_collegeevents.declareroyaldecree.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+  option = {
+		name = "eum_collegeevents.declareroyaldecree1.o"
+		
+		# leave it to the people
+		controller = {
+			add_adm_power = 0
+		}
+  }
+  
+  option = {
+		name = "eum_collegeevents.declareroyaldecree2.o"
+		
+		# Cancel Project Completely
+		
+	}
+	
+	option = {
+		name = "eum_collegeevents.declareroyaldecree3.o" 
+		# Send Royal Observer & Military Corps to speed up.
+		
+		controller = {
+			add_adm_power = -50
+			add_mil_power = -50
+		}
+		
+		add_province_modifier = { 
+			name = "site_cleared"
+			duration = 1825
+		}
+	}
+}
+
+
+province_event = {
+	id = eum_collegeevents.9
+	title = eum_collegeevents.foundationset.t
+	desc  = eum_collegeevents.foundationset.d
+	picture = DIPLOMACY_eventPicture
+  
+	trigger = {
+			NOT = { has_building = university }
+			has_province_modifier = site_cleared
+	}
+	
+	mean_time_to_happen = { 
+		months = 14
+	}
+  
+  option = {
+    name = eum_collegeevents.foundationset.o
+		
+			add_province_modifier = { 
+				name = "university_started"
+				duration = 1825
+			}
+  }
+}
+
+
+province_event = {
+	id = eum_collegeevents.10
+	title = eum_collegeevents.universityfinished.t
+	desc  = eum_collegeevents.universityfinished.d
+	picture = DIPLOMACY_eventPicture
+  
+	trigger = {
+		NOT = { has_building = university }
+		has_province_modifier = university_started
+	}
+	
+	mean_time_to_happen = { 
+		months = 16
+	}
+  
+  option = {
+    name = eum_collegeevents.universityfinished.o
+		
+		add_building = university
+		
+		controller = { 
+			country_event = { id = eum_collegeevents.11 }  #Event that says finished.
+		}
+  }
+}
+
+country_event = {
+	id = eum_collegeevents.11
+	title = eum_collegeevents.finished.t
+	desc  = eum_collegeevents.finished.d
+	picture = DIPLOMACY_eventPicture
+  
+	is_triggered_only = yes
+  
+	option = {
+		name = eum_collegeevents.finished.o
+		
+	}
+}
