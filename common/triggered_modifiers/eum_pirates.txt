@@ -32,7 +32,7 @@ eum_caribbean_pirates = {
 ######################################
 # Barbary Pirates
 ######################################
-barbary_pirates = {
+eum_barbary_pirates = {
 	potential = {
 		religion_group = christian
 		culture_group = iberian

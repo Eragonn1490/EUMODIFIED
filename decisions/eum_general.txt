@@ -1,4 +1,39 @@
 country_decisions = {
+	eum_accept_umbrian_culture = {
+		potential = {
+			has_country_modifier = eum_italian_acceptance_trigger
+			any_owned_province = {
+				culture = umbrian
+			}
+			NOT = { has_country_modifier = eum_forced_accepted_culture }
+		}
+		allow = {
+			has_country_modifier = eum_italian_acceptance_trigger
+			any_owned_province = {
+				has_owner_religion = yes
+				culture = umbrian
+			}
+			prestige = 0
+		}
+		effect = {
+			add_accepted_culture = umbrian
+			add_prestige = 10
+			random_owned_province = {
+				limit = {
+					has_owner_culture = yes
+				}
+				spawn_rebels = { type = revolutionary_rebels size = 4 }
+			}
+			add_country_modifier = {
+				name = "eum_forced_accepted_culture"
+				duration = 9302
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	anti_piracy_act = {
 		potential = {
 			NOT = { has_country_modifier = the_anti_piracy_act }

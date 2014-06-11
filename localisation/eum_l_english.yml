@@ -1,0 +1,17 @@
+l_english:
+ # CB's
+ cb_eum_cross_claim_throne: "Claim on Foregin Throne"
+ cb_eum_cross_claim_throne_desc: "War Goal is to enforce our claim on a foreign throne."
+ cb_eum_form_personal_union: "Dynastic Union"
+ cb_eum_form_personal_union_desc: "Our Monarch has a valid claim to the throne, being farther down on the list of successors we have decided to put down the pen and take up the sword and move to the top of the list."
+ cb_eum_retake_subject_core: "Restore Subjects Rightful Land"
+ cb_eum_retake_subject_core_desc: "They hold provinces which rightfully belong to our subject."
+ 
+ # Wargoals
+ EUM_dynasticunion_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ Dynastic Union Conflict"
+ EUM_dynasticunion_wargoal: "To Unify Our Crowns"
+ EUM_dynasticunion_wargoal_desc: "War Goal is to unify our crowns with force, by occupying there capital."
+ eum_take_subject_core: "Take a subject's core province"
+ eum_take_subject_core_desc: "War goal is to take a subject's core province from the target."
+ war_goal_eum_take_subject_core: "Take core $PROV$"
+ war_goal_eum_take_subject_core_desc: "War goal is to take the core $PROV$."

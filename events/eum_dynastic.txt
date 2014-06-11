@@ -1,0 +1,132 @@
+namespace = eum_dynastic
+
+country_event = {
+	id = eum_dynastic.1
+	title = "eum_dynastic.1.2"
+	 desc = "eum_dynastic.1.3"
+	
+	trigger = {
+		ai = no
+		OR = {
+			NOT = { has_country_modifier = dynastic_prep }
+			NOT = { has_country_modifier = forfeit }
+		}
+		OR = {
+			#Claim through regency
+			government = monarchy
+			has_regency = yes
+			is_lesser_in_union = no
+			advisor = statesman
+			prestige = 50
+		}
+
+		OR = {
+			#Claim through legitimacy
+			government = monarchy
+			has_regency = no
+			is_lesser_in_union = no
+			legitimacy = 50
+			prestige = 25
+		}
+	}
+	
+	mean_time_to_happen =  {
+		months = 400
+		modifier = {
+			factor = 0.5
+			NOT = { stability = -3 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = -1 }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA5014"		# Request military guidance.
+		ai_chance = { factor = 55 }
+		add_prestige = -10
+		add_years_of_income = -0.1
+		add_army_tradition = 5
+		add_navy_tradition = 5
+		
+		add_country_modifier = {
+      			name = "dynastic_prep"
+     			duration = 4380
+    	}	
+
+		#here
+		random_country = {
+			limit = {
+				ai = yes
+				religion = ROOT
+				government = monarchy
+				is_lesser_in_union = no
+				marriage_with = ROOT
+			}
+			ROOT = {
+				add_casus_belli = {
+					type = cb_eum_restore_personal_union
+					target = PREV
+				}
+			}
+		}
+		
+	}
+	option = {
+		name = "EVTOPTB5014"		# Request administrative guidance.
+		ai_chance = { factor = 45 }
+		add_prestige = -10
+		add_years_of_income = 0.05
+		add_adm_power = 25
+		
+		add_country_modifier = {
+      			name = "dynastic_prep"
+     			duration = 4380
+    	}
+
+		#here
+		random_country = {
+			limit = {
+				ai = yes
+				religion = ROOT
+				government = monarchy
+				is_lesser_in_union = no
+				marriage_with = ROOT
+			}
+			ROOT = {
+				add_casus_belli = {
+					type = cb_eum_restore_personal_union
+					target = PREV
+				}
+			}
+		}	
+	
+	}
+	
+	option = {
+		name = "EVTOPTA9476"	#Forfeit Claim
+		
+		add_country_modifier = {
+      			name = "forfeit"
+     			duration = 4380
+    		}
+		
+		random_list = {
+			10 = {
+				add_stability = 1
+			}
+			10 = {
+				add_stability = 2
+			}
+			
+			10 = { 
+				add_stability = 3
+			}
+		}
+	}
+}

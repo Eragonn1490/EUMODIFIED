@@ -1,0 +1,64 @@
+namespace = eum_provincedefection
+
+# Province Defection
+province_event = {
+	id = eum_provincedefection.1
+	title = "EVTNAME746"
+	desc = "EVTDESC746"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		is_capital = no
+		has_siege = no
+		owner = {
+			war_exhaustion = 10
+			is_at_war = yes
+			war_score = -70
+		}
+		NOT = { controlled_by = owner }
+		NOT = { controller = { tag = REB } }
+		NOT = { controller = { tag = NAT } }
+		NOT = { controller = { tag = PIR } }
+		controller = { 
+			NOT = { war_exhaustion = 12 }
+			stability = 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 144
+		modifier = {
+			factor = 5.0
+			owner = { luck = yes }
+		}		
+		modifier = {
+			factor = 0.8
+			has_owner_religion = no
+		}		
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { prestige = 0 } }
+		}		
+		modifier = {
+			factor = 0.8
+			owner = { NOT = { prestige = -50 } }
+		}
+		modifier = {
+			factor = 0.2
+			owner = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.2
+			owner = { stability = -2 }
+		}
+		modifier = {
+			factor = 0.2
+			owner = { stability = -3 }
+		}	
+	}
+
+	option = {
+		name = "EVTOPTA746"
+		controller = { country_event = { id = 747 } }
+	}
+}

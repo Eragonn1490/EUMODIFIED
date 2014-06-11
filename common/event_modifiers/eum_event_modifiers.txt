@@ -6,3 +6,12 @@ the_anti_piracy_act = {
 	global_trade_power = 0.05
 	#icon = 1
 }
+site_chosen = {
+	local_tax_modifier = -0.10
+}
+site_cleared = {
+	local_tax_modifier = -0.20
+}
+university_started = {
+	local_tax_modifier = -0.15
+}

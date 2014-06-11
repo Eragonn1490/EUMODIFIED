@@ -1,5 +1,5 @@
 # Reclaim
-take_subject_core = {
+eum_take_subject_core = {
 	type = take_core
 
 	attacker = {

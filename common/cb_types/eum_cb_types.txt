@@ -9,7 +9,7 @@ cb_eum_form_personal_union = {
 }
 
 # Claim Throne
-cb_cross_claim_throne = {
+cb_eum_cross_claim_throne = {
 
 	prerequisites = {
 		is_neighbor_of = FROM
@@ -26,7 +26,7 @@ cb_cross_claim_throne = {
 }
 
 # Reclaim Subjects land
-cb_subject_core = {
+cb_eum_retake_subject_core = {
 	
 	prerequisites = {
 		any_subject_country = {
@@ -34,5 +34,5 @@ cb_subject_core = {
 		}
 	}
 
-	war_goal = take_subject_core
+	war_goal = eum_take_subject_core
 }

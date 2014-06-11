@@ -31,3 +31,13 @@ Integration_Successful = {
 emperor_decides = {
 
 }
+forfeit = {
+	diplomatic_reputation = 1
+}
+cooldown_time1 = {
+
+}
+eum_forced_accepted_culture = {
+	land_morale = 0.01
+	naval_morale = 0.01
+}
